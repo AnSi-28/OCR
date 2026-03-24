@@ -17,7 +17,7 @@ def extract_text(image_path: str) -> str:
         return_tensors="pt"
     ).pixel_values.to(device)
 
-    # 🔥 Beam search (better decoding)
+    # Beam search 
     generated_ids = model.generate(
         pixel_values,
         num_beams=5,

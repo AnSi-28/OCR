@@ -47,7 +47,7 @@ async def upload_image(file: UploadFile = File(...)):
         for line in lines:
             for (x, y, w, h) in line:
 
-                # 🔥 Add padding
+                # padding
                 pad = 10
                 x1 = max(0, x - pad)
                 y1 = max(0, y - pad)
@@ -56,7 +56,7 @@ async def upload_image(file: UploadFile = File(...)):
 
                 crop = img[y1:y2, x1:x2]
 
-                # 🔥 Mild upscale (safe)
+                # Upscale (safe)
                 crop = cv2.resize(
                     crop,
                     None,
